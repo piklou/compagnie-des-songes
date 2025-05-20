@@ -1,0 +1,7 @@
+{{ define "main" }}
+<section id="accueil-content">
+    <h2>{{ .Title }}</h2>
+    <img src="{{ "images/yourte_exterieur_jour1.jpg" | relURL }}" alt="Image d'accueil Compagnie des Songes" style="width:100%; max-width:700px; margin-bottom:1.5em; border-radius:8px;">
+    {{ .Content }}
+</section>
+{{ end }}

@@ -1,0 +1,10 @@
+baseURL: "https://compagniedessonges.fr/"
+languageCode: "fr-fr"
+title: "La Compagnie des Songes"
+theme: "compagnie"
+
+params:
+  email_display: "compagniedessonges AROBASE mailo POINT com"
+  email_real: "compagniedessonges@mailo.com"
+  linktree_url: "https://linktr.ee/lattrapereves07"
+  description: "Compagnie de théâtre et d'émerveillement basée en Ardèche"

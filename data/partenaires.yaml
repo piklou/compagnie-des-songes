@@ -1,0 +1,27 @@
+- nom: "FDVA"
+  logo: "images/partenaires/logo_fdva_officiel.png"
+  url: ""
+
+- nom: "Mairie de Gravières"
+  logo: "images/partenaires/logo_mairie_gravieres.jpeg"
+  url: ""
+
+- nom: "Communauté de communes du pays des vans en Cévennes"
+  logo: "images/partenaires/logo_cc_pays_des_vans.png"
+  url: ""
+
+- nom: "PNR des monts d'Ardèche"
+  logo: "images/partenaires/logo_pnr_monts_ardeche.png"
+  url: ""
+
+- nom: "Leader"
+  logo: "images/partenaires/logo_leader_france.jpeg"
+  url: ""
+
+- nom: "La Trame"
+  logo: "images/partenaires/logo_la_trame.webp"
+  url: ""
+
+- nom: "Département de l'Ardèche"
+  logo: "images/partenaires/logo_departement_ardeche.png"
+  url: ""

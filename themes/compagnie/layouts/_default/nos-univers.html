@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section id="nos-univers-content">
+    <h2>{{ .Title }}</h2>
+    {{ .Content }}
+    
+    <div class="spectacles-section">
+        <h3>Spectacles professionnels</h3>
+        {{ range .Params.spectacles }}
+        <div class="spectacle-item">
+            <h4>{{ .titre }}</h4>
+            <div class="spectacle-content">
+                {{ if .image }}
+                <img src="{{ .image | relURL }}" alt="{{ .titre }}" class="spectacle-image">
+                {{ end }}
+                <div class="spectacle-description">
+                    {{ .description | markdownify }}
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+    
+    <div class="projets-section">
+        <h3>Actions et projets d'envergure</h3>
+        {{ range .Params.projets }}
+        <div class="projet-item">
+            <h4>{{ .titre }}</h4>
+            <div class="projet-content">
+                {{ if .image }}
+                <img src="{{ .image | relURL }}" alt="{{ .titre }}" class="projet-image">
+                {{ end }}
+                <div class="projet-description">
+                    {{ .description | markdownify }}
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

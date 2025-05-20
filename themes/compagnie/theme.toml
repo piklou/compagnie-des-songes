@@ -1,0 +1,12 @@
+name = "Compagnie des Songes"
+license = "MIT"
+licenselink = "https://github.com/yourname/compagnie/blob/master/LICENSE"
+description = "Thème personnalisé pour La Compagnie des Songes"
+homepage = "https://compagniedessonges.fr/"
+tags = ["responsive", "theatre", "company", "minimal"]
+features = ["responsive", "clean", "modern"]
+min_version = "0.92.0"
+
+[author]
+  name = "Manus"
+  homepage = "https://compagniedessonges.fr/"

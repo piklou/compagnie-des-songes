@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section id="equipe-content">
+    <h2>{{ .Title }}</h2>
+    {{ .Content }}
+    
+    <div class="membres-equipe">
+        {{ range .Params.membres }}
+        <div class="membre-item">
+            <h3>{{ .nom }}</h3>
+            <p class="role">{{ .role }}</p>
+            {{ if .photo }}
+            <img src="{{ .photo | relURL }}" alt="{{ .nom }}" class="membre-photo">
+            {{ end }}
+            <div class="membre-bio">
+                {{ .bio | markdownify }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

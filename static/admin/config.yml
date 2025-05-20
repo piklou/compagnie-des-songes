@@ -1,0 +1,109 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "accueil"
+        label: "Page d'accueil"
+        file: "content/_index.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Date", name: "date", widget: "datetime"}
+          - {label: "Contenu", name: "body", widget: "markdown"}
+      
+      - name: "nos-univers"
+        label: "Nos Univers"
+        file: "content/nos-univers.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Date", name: "date", widget: "datetime"}
+          - {label: "Introduction", name: "body", widget: "markdown"}
+          - label: "Spectacles"
+            name: "spectacles"
+            widget: "list"
+            fields:
+              - {label: "Titre", name: "titre", widget: "string"}
+              - {label: "Image", name: "image", widget: "image", required: false}
+              - {label: "Description", name: "description", widget: "markdown"}
+          - label: "Projets"
+            name: "projets"
+            widget: "list"
+            fields:
+              - {label: "Titre", name: "titre", widget: "string"}
+              - {label: "Image", name: "image", widget: "image", required: false}
+              - {label: "Description", name: "description", widget: "markdown"}
+      
+      - name: "notre-essence"
+        label: "Notre Essence"
+        file: "content/notre-essence.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Date", name: "date", widget: "datetime"}
+          - {label: "Introduction", name: "body", widget: "markdown"}
+          - label: "Approche Pédagogique"
+            name: "approche_pedagogique"
+            widget: "list"
+            fields:
+              - {label: "Titre", name: "titre", widget: "string"}
+              - {label: "Image", name: "image", widget: "image", required: false}
+              - {label: "Description", name: "description", widget: "markdown"}
+      
+      - name: "equipe"
+        label: "L'Équipe"
+        file: "content/equipe.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Date", name: "date", widget: "datetime"}
+          - {label: "Introduction", name: "body", widget: "markdown"}
+          - label: "Membres"
+            name: "membres"
+            widget: "list"
+            fields:
+              - {label: "Nom", name: "nom", widget: "string"}
+              - {label: "Rôle", name: "role", widget: "string"}
+              - {label: "Photo", name: "photo", widget: "image", required: false}
+              - {label: "Biographie", name: "bio", widget: "markdown"}
+  
+  - name: "partenaires"
+    label: "Partenaires"
+    folder: "data"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    files:
+      - label: "Liste des Partenaires"
+        name: "partenaires"
+        file: "data/partenaires.yaml"
+        fields:
+          - label: "Partenaires"
+            name: "partenaires"
+            widget: "list"
+            fields:
+              - {label: "Nom", name: "nom", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image"}
+              - {label: "URL", name: "url", widget: "string", required: false}
+
+  - name: "parametres"
+    label: "Paramètres du site"
+    files:
+      - label: "Configuration générale"
+        name: "config"
+        file: "config.yaml"
+        fields:
+          - {label: "Titre du site", name: "title", widget: "string"}
+          - {label: "URL de base", name: "baseURL", widget: "string"}
+          - label: "Paramètres"
+            name: "params"
+            widget: "object"
+            fields:
+              - {label: "Email affiché", name: "email_display", widget: "string"}
+              - {label: "Email réel", name: "email_real", widget: "string"}
+              - {label: "URL Linktree", name: "linktree_url", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}

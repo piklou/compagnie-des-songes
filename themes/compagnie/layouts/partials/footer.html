@@ -1,0 +1,46 @@
+<footer>
+    <div class="contact-info">
+        <p>Contactez-nous : <span id="email-contact" tabindex="0" role="link" aria-label="Afficher l'adresse e-mail">{{ .Site.Params.email_display }}</span></p>
+        <script>
+            (function() {
+                const emailSpan = document.getElementById('email-contact');
+                if (emailSpan) {
+                    const emailAddress = emailSpan.textContent.replace(' AROBASE ', '@').replace(' POINT ', '.');
+                    function revealEmail() {
+                        emailSpan.innerHTML = `<a href="mailto:${emailAddress}">${emailAddress}</a>`;
+                        emailSpan.removeEventListener('click', revealEmail);
+                        emailSpan.removeEventListener('keydown', handleKeyDown);
+                        emailSpan.removeAttribute('tabindex');
+                        emailSpan.removeAttribute('role');
+                        emailSpan.removeAttribute('aria-label');
+                    }
+                    function handleKeyDown(event) {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            revealEmail();
+                            event.preventDefault();
+                        }
+                    }
+                    emailSpan.addEventListener('click', revealEmail);
+                    emailSpan.addEventListener('keydown', handleKeyDown);
+                }
+            })();
+        </script>
+    </div>
+    <div class="partners">
+        <h3>Nos Partenaires</h3>
+        {{ range .Site.Data.partenaires }}
+        <img src="{{ .logo | relURL }}" alt="{{ .nom }}" class="partner-logo">
+        {{ end }}
+    </div>
+    <div class="linktree-footer">
+        <a href="{{ .Site.Params.linktree_url }}" target="_blank" class="cta-button">Retrouvez L'Attrape-Rêves</a>
+    </div>
+    <p>&copy; <span id="year-footer"></span> Compagnie des Songes - compagniedessonges.fr</p>
+</footer>
+
+<script>
+    const yearFooterSpan = document.getElementById("year-footer");
+    if (yearFooterSpan) {
+        yearFooterSpan.textContent = new Date().getFullYear();
+    }
+</script>

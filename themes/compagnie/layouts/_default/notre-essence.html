@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section id="notre-essence-content">
+    <h2>{{ .Title }}</h2>
+    {{ .Content }}
+    
+    <div class="pedagogie-section">
+        <h3>Notre approche pédagogique</h3>
+        {{ range .Params.approche_pedagogique }}
+        <div class="pedagogie-item">
+            <h4>{{ .titre }}</h4>
+            <div class="pedagogie-content">
+                {{ if .image }}
+                <img src="{{ .image | relURL }}" alt="{{ .titre }}" class="pedagogie-image">
+                {{ end }}
+                <div class="pedagogie-description">
+                    {{ .description | markdownify }}
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
