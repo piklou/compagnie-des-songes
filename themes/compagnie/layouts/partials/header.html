@@ -6,8 +6,8 @@
     <nav>
         <ul>
             <li><a href="{{ "/" | relURL }}" {{ if .IsHome }}class="active"{{ end }}>Accueil</a></li>
-            <li><a href="{{ "nos-univers" | relURL }}" {{ if eq .RelPermalink "/nos-univers/" }}class="active"{{ end }}>Nos Univers</a></li>
-            <li><a href="{{ "notre-essence" | relURL }}" {{ if eq .RelPermalink "/notre-essence/" }}class="active"{{ end }}>Notre Essence</a></li>
+            <li><a href="{{ "nos-univers" | relURL }}" {{ if eq .RelPermalink "/nos-univers/" }}class="active"{{ end }}>Nos Créations</a></li>
+            <li><a href="{{ "notre-essence" | relURL }}" {{ if eq .RelPermalink "/notre-essence/" }}class="active"{{ end }}>Notre Univers</a></li>
             <li><a href="{{ "equipe" | relURL }}" {{ if eq .RelPermalink "/equipe/" }}class="active"{{ end }}>L'Équipe</a></li>
         </ul>
     </nav>
